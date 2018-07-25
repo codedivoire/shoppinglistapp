@@ -1,4 +1,21 @@
-# Les Fondamentaux de VueJs
-, 
-Vue.js est un framework JavaScript très apprécié des développeurs front-end, 
-apprenez les bases de Vue.js gràce a ce petit programme de lists de courses
+# Vue.js Les Fondamentaux
+
+Ce référentiel contient l'exemple de code pour le live [Vue.js - Les Fondamentaux](https://#)
+
+Ce cours de Vue.js vous apprendra et vous permettra de vous familiariser avec les concepts fondamentaux de Vue.js. Parfait si vous n'avez pas touché à Vue avant ou si vous venez de commencer!
+
+#### Sujets :
+
+- Introduction au (Data binding)
+- Syntaxe et expressions
+- Directives de vue, boucles et conditions
+- Vue Devtools
+- Les entrées utilisateur
+- Les événements
+- Méthodes et propriétés
+- Liaisons d'attributs et classes dynamiques
+- Composants
+
+Le cours est adapté aux développeurs qui ne connaissent pas encore Vue.js ou qui commencent juste avec Vue.
+
+Ce cours est propulsé par. [Code d'ivoire](https://#)
