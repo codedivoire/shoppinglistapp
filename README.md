@@ -18,4 +18,4 @@ Ce cours de Vue.js vous apprendra et vous permettra de vous familiariser avec le
 
 Le cours est adapté aux développeurs qui ne connaissent pas encore Vue.js ou qui commencent juste avec Vue.
 
-Ce cours est propulsé par. [Code d'ivoire](https://codedivoire.slack.com)
+Ce cours est propulsé par. [Code d'ivoire](http://slack.codedivoire.com/)
