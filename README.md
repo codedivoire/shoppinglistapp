@@ -8,7 +8,7 @@ Ce cours de Vue.js vous apprendra et vous permettra de vous familiariser avec le
 
 - Introduction au (Data binding)
 - Syntaxe et expressions
-- Directives de vue, boucles et conditions
+- Directives, boucles et conditions
 - Vue Devtools
 - Les entrées utilisateur
 - Les événements
