@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Palanquin:300,400,700|Sofia');
+
 body {
     background: #d1d1d1;
     height: 100vh;
@@ -8,6 +10,12 @@ body {
     justify-content: center;
     margin: 0;
     padding: 0;
+    font-family: 'Sofia', cursive;
+    font-weight: 400;
+}
+
+h1, h2, h3 {
+    font-family: 'Palanquin', sans-serif;
 }
 
 .me {
@@ -75,6 +83,8 @@ body {
 
 h1 {
     color: #3D4852;
+    font-weight: 700;
+    letter-spacing: 0.1px;
 }
 
 ul {
@@ -166,12 +176,12 @@ li input {
 }
 
 .btn-primary {
-    background: #6CB2EB;
+    background: #0C1452;
     color: #fff;
 }
 
 .btn-primary:hover {
-    background: #3490DC;
+    background: #13377D;
 }
 
 .btn-cancel {

@@ -4,87 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping List App</title>
+    <title>Document</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
+
     <div class="me">
         <img src="me.jpeg" alt="">
         <p>
             <strong>Hassane Dao</strong>
             <span>Développeur full-stack</span>
-            <span style="font-weight:bold; margin-top: 3px">#Vuejs</span>
+            <span style="font-weight:bold; margin-top: 3px; font-family: 'Fira Code'">#Vuejs</span>
         </p>
     </div>
     <img class="img" src="logo.jpeg" alt="">
-
-    <!-- Shopping List -->
+    
     <div id="shopping-list">
         <div class="header">
-            <h1>{{ header.toLocaleUpperCase() }}</h1>
-            <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Add Item</button>
-            <button v-else class="btn btn-cancel" @click="changeState('default')">Cancel Adding Item</button>
+            <h1>{{ header.toUpperCase() }}</h1>
+            <button v-if="state === 'default'" class="btn btn-primary" @click="changeState('edit')">Ajouter</button>
+            <button v-else class="btn btn-cancel" @click="changeState('default')">Annuler</button>
         </div>
         <div v-if="state === 'edit'" class="add-item-form">
-            <input v-model="newItem" type="text" placeholder="Add an item" @keyup.enter="saveItem">
-            <button class="btn btn-primary" :disabled="newItem.length === 0" @click="saveItem">Save Item</button>
+            <input type="text" v-model="newItem" placeholder="Ajouter un contenu" @keyup.enter="saveItem">
+            <p>{{ characterCount }}/200</p>
+            <button class="btn btn-primary" @click="saveItem()" :disabled="newItem.length === 0">Enregistrer</button>
         </div>
         <ul>
-            <li v-for="item in reversedItems" :class="{strikeout: item.purchased}" @click="togglePurchased(item)">{{ item.label }}</li>
+            <li v-for="item in reversedItems"  :class="{strikeout : item.purchased}">{{ item.label }}</li>
         </ul>
-        <p v-if="items.length === 0">Super!, Vous avez acheté tous vos articles.</p>
+        <p v-if="items.length === 0">Super!!, vous avez acheté tous vos articles</p>
     </div>
-    <!-- End Shopping List -->
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script>
         var shoppingList = new Vue({
             el: '#shopping-list',
             data: {
                 state: 'default',
-                header: 'shopping list app',
+                header: "shopping list app",
                 newItem: '',
                 items: [
-                    {
-                        label: '2kg d\'oignons',
-                        purchased: false,
-                        highPriority: false,
-                    },
-                    {
-                        label: '1kg de poivrons',
-                        purchased: true,
-                        highPriority: false,
-                    },
-                    {
-                        label: '1 poulet',
-                        purchased: false,
-                        highPriority: false,
-                    },
-                    {
-                        label: '500g d\'olives',
-                        purchased: false,
-                        highPriority: false,
-                    },
+                    // {
+                    //     label: '1kg de tomates',
+                    //     purchased: false,
+                    //     hightPriority: true
+                    // },
+                    // {
+                    //     label: '2kg d\'oignons',
+                    //     purchased: true,
+                    //     hightPriority: true
+                    // },
+                    // {
+                    //     label: '1kg de riz',
+                    //     purchased: false,
+                    //     hightPriority: false
+                    // }
                 ]
-            },
-            computed: {
-                reversedItems() {
-                    return this.items.slice(0).reverse();
-                }
             },
             methods: {
                 saveItem: function() {
                     this.items.push({
                         label: this.newItem,
-                        purchased: false,
-                    });
-                    this.newItem = '';
+                        purchased: false
+                    })
+                    this.newItem = ''
                 },
                 changeState: function(newState) {
-                    this.state = newState;
-                    this.newItem = '';
+                    this.state = newState
+                    this.newItem = ''
+                }
+            },
+            computed: {
+                characterCount() {
+                    return this.newItem.length
                 },
-                togglePurchased: function(item) {
-                    item.purchased = !item.purchased;
+                reversedItems() {
+                    return this.items.slice(0).reverse();
                 }
             }
         })
